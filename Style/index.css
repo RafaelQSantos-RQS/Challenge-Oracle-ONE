@@ -1,8 +1,13 @@
+/* Corpo da página*/
 body {
-    background-color: #E5E5E5;
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background-color: #f3f5fc;
+
 }
 
-/* Imagens da letra A no top esquerdo*/
+/* Imagem da letra A no top esquerdo*/
 #a-header {
     padding-top: 40px;
     padding-left: 84px;
@@ -10,7 +15,7 @@ body {
 
 /* Caixa de inserção de texto */
 input {
-    position: absolute;
+    position: sticky;
     width: 680px;
     height: 48px;
     left: 240px;
@@ -22,5 +27,154 @@ input {
     font-size: 32px;
     line-height: 150%;
 
-    border-radius: 20px 20px 20px 20px;
+    color: #0A3871;
+    border: none;
+    background-color: #f3f5fc;
+    outline: 0;
+}
+
+/* Imagem de exclamação*/
+#exclamacao {
+    width: 16px;
+    height: 16px;
+
+    position: absolute;
+    left: 240px;
+    right: 1184px;
+    top: 852px;
+    bottom: 156px;
+}
+
+/* Texto de aviso*/
+#aviso {
+    position: absolute;
+    left: 264px;
+    right: 948px;
+    top: 840px;
+    bottom: 155px;
+
+    width: 228px;
+    height: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    /* identical to box height, or 18px */
+
+    /* Gray/gray-400 */
+    color: #495057;
+    opacity: 0.8;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Botão de Criptografar*/
+.btn_criptografar {
+    cursor: pointer;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    width: 328px;
+    height: 67px;
+
+    /* Dark blue/dark-blue-300 */
+    background: #0A3871;
+    border-radius: 24px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    position: absolute;
+    top: 885px;
+    bottom: 72px;
+    left: 240px;
+    right: 872px;
+
+
+}
+
+/* Aumenta o botão quando passa o mouse em cima*/
+.btn_criptografar:hover {
+    transform: scale(1.1);
+}
+
+/* Texto do centro do botão (Criptografar)*/
+.btn_criptografar span {
+    cursor: pointer;
+    width: 280px;
+    height: 19px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    vertical-align: middle;
+
+    /* White */
+    color: #FFFFFF;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.btn_descriptografar {
+    cursor: pointer;
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    width: 328px;
+    height: 67px;
+    /* Light gray */
+    background: #D8DFE8;
+    /* Dark blue/dark-blue-300 */
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+    position: absolute;
+    top: 885px;
+    bottom: 72px;
+    left: 592px;
+    right: auto;
+}
+
+.btn_descriptografar:hover {
+    transform: scale(1.1);
+}
+
+.btn_descriptografar span {
+    width: 280px;
+    height: 19px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    /* Dark blue/dark-blue-300 */
+    color: #0A3871;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 1;
 }
