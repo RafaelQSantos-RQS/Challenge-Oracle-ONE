@@ -33,6 +33,10 @@ input {
     outline: 0;
 }
 
+input::placeholder {
+    color: #0A3871;
+}
+
 /* Imagem de exclamação*/
 #exclamacao {
     width: 16px;
@@ -85,6 +89,10 @@ input {
     border-radius: 32px;
 }
 
+#retanguloInicio span {
+    padding: 579px 32px auto 32px;
+}
+
 /* Imagem dentro do retângulo a direita*/
 #imagemInicio {
     position: absolute;
@@ -119,7 +127,7 @@ input {
     left: 240px;
     right: 872px;
 
-
+    transition: all 0.5s ease;
 }
 
 /* Aumenta o botão quando passa o mouse em cima*/
@@ -176,6 +184,8 @@ input {
     bottom: 72px;
     left: 592px;
     right: auto;
+
+    transition: all 0.5s ease;
 }
 
 .btn_descriptografar:hover {
