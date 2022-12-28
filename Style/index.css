@@ -1,5 +1,4 @@
-/* Corpo da página*/
-body {
+body { /* Corpo da página*/
     position: relative;
     width: 1440px;
     height: 1024px;
@@ -7,22 +6,28 @@ body {
 
 }
 
-/* Imagem da letra A no top esquerdo*/
-#a-header {
-    padding-top: 40px;
-    padding-left: 84px;
+#logotipo { /* Imagem da letra A no top esquerdo*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 40px;
+
+    position: absolute;
+    width: 120px;
+    height: 48px;
+
 }
 
-/* Caixa de inserção de texto */
-input {
+#txt-encriptar { /* Caixa de inserção de texto */
     position: absolute;
     width: 680px;
-    height: 48px;
+    height: auto;
     left: 240px;
     top: 168px;
     
     font-family: 'Inter';
-    font-style: bold;
+    font-style: normal;
     font-weight: 400;
     font-size: 32px;
     line-height: 150%;
@@ -30,15 +35,21 @@ input {
     color: #0A3871;
     border: none;
     background-color: #f3f5fc;
+    
     outline: 0;
+    resize: none;
+    overflow: auto;
 }
 
-input::placeholder {
+#txt-encriptar::-webkit-scrollbar{ /* Tirar a barra de rolagem*/
+    display: none;
+}
+
+#txt-encriptar::placeholder { /*Texto dentro do textarea */
     color: #0A3871;
 }
 
-/* Imagem de exclamação*/
-#exclamacao {
+#exclamacao { /* Imagem de exclamação*/
     width: 16px;
     height: 16px;
 
@@ -49,14 +60,13 @@ input::placeholder {
     bottom: 156px;
 }
 
-/* Texto de aviso*/
-#aviso {
-    position: absolute;
-    left: 264px;
+#aviso { /* Texto de aviso*/
+    position: relative;
+    top: 851px;
     right: 948px;
-    top: 840px;
+    left: 264px;
     bottom: 155px;
-
+    
     width: 228px;
     height: 18px;
     font-family: 'Inter';
@@ -64,49 +74,25 @@ input::placeholder {
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
-    /* identical to box height, or 18px */
 
-    /* Gray/gray-400 */
     color: #495057;
     opacity: 0.8;
-    /* Inside auto layout */
+
     flex: none;
     order: 1;
     flex-grow: 0;
 }
 
-/* Retangulo (Branco) a direita*/
-#retanguloInicio {
-    position: absolute;
-    width: 400px;
-    height: 944px;
-    left: 1000px;
-    top: 40px;
-    /* White */
-    background: #FFFFFF;
-    /* shadow */
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    border-radius: 32px;
-}
-
-/* Imagem dentro do retângulo a direita*/
-#imagemInicio {
-    position: absolute;
-    width: 336px;
-    height: 304px;
-    padding: 243px 32px 397px 32px;
-}
-
-.botoes {
+#buttons { /* Div dos Botões + Aviso */
     width: 680px;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Botão de Criptografar*/
-.btn_criptografar {
+.btn_criptografar { /* Botão de Criptografar*/
     cursor: pointer;
-    /* Auto layout */
+
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -115,11 +101,9 @@ input::placeholder {
     width: 328px;
     height: 67px;
 
-    /* Dark blue/dark-blue-300 */
     background: #0A3871;
     border-radius: 24px;
 
-    /* Inside auto layout */
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -132,7 +116,6 @@ input::placeholder {
 
     display: flex;
     justify-content: center;
-    align-items: center;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -143,20 +126,18 @@ input::placeholder {
     transition: all 0.5s ease;
 }
 
-/* Animações do Botão criptografar*/
-.btn_criptografar:hover {
+.btn_criptografar:hover { /* Animação do Botão criptografar para quando passar o mouse em cima*/
     scale: 1.1;
 }
 
-.btn_criptografar:active {
+.btn_criptografar:active { /* Animação do Botão criptografar para quando clicar no botão*/
     scale: 0.9;
 }
 
-/* Botão descriptografar*/
-.btn_descriptografar {
+.btn_descriptografar { /* Botão descriptografar*/
     cursor: pointer;
     box-sizing: border-box;
-    /* Auto layout */
+
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -164,19 +145,18 @@ input::placeholder {
     gap: 8px;
     width: 328px;
     height: 67px;
-    /* Light gray */
+
     background: #D8DFE8;
-    /* Dark blue/dark-blue-300 */
+    
     border: 1px solid #0A3871;
     border-radius: 24px;
-    /* Inside auto layout */
+    
     flex: none;
     order: 1;
     flex-grow: 0;
 
     display: flex;
     justify-content: center;
-    align-items: center;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -193,11 +173,30 @@ input::placeholder {
     transition: all 0.5s ease;
 }
 
-/* Animação do botão descriptografar*/
-.btn_descriptografar:hover {
+.btn_descriptografar:hover { /* Animação do botão descriptografar para qunado passar o mouse em cima*/
     scale: 1.1;
 }
 
-.btn_descriptografar:active {
+.btn_descriptografar:active { /* Animação do Botão descriptografar para quando clicar no botão*/
     scale: 0.9;
+}
+
+#retBranco { /* Retangulo (Branco) a direita*/
+    position: absolute;
+    display: block;
+    width: 400px;
+    height: 944px;
+    left: 1000px;
+    top: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+}
+
+/* Imagem dentro do retângulo a direita*/
+#imagemInicio {
+    position: absolute;
+    width: 336px;
+    height: 304px; 
+    margin-bottom: 32px;
 }

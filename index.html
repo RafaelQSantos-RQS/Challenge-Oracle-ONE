@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="Style/reset.css">
         <link rel="stylesheet" href="Style/index.css">
         <title>Desafio Oracle - Decodificador de Texto</title>
     </head>
+
     <body>
-        <a href="index.html"><img id="a-header" src="Imagens/letra-a.svg"></a>
-        <input type="text" placeholder="Digite seu Texto"/>
-        <img id="exclamacao" src="Imagens/exclamacao.svg">
-        <div id="retanguloInicio">
-            <img id="imagemInicio" src="Imagens/imagemInicio.svg">
-            <br>
-            <span>Nenhuma mensagem encontrada</span>
+        <header>
+            <a href="index.html"><img id="logotipo" src="Imagens/letra-a.svg"></a>
+        </header>
+
+        <main>
+        <textarea id="txt-encriptar" placeholder="Digite seu Texto"></textarea>
+        <div id="botao+aviso">
+            <img id="exclamacao" src="Imagens/exclamacao.svg">
+            <p id="aviso">Apenas letras minúsculas e sem acento</p>
+            <div id="buttons">
+                <button type="button" class="btn_criptografar">Criptografar</button>
+                <button type="button" class="btn_descriptografar">Descriptografar</button>
+            </div>
         </div>
-        <p id="aviso">Apenas letras minúsculas e sem acento</p>
-        <div class="botoes">
-            <button type="button" class="btn_criptografar"><span>Criptografar</span></button>
-            <button type="button" class="btn_descriptografar"><span>Descriptografar</span></button>
+        <div id="retBranco">
+            <div id="caixa-inicio">
+                <img id="imagemInicio" src="Imagens/imagemInicio.svg">
+                <h2 id="txt-inicio">Nenhuma mensagem encontrada</h2>
+                <p id="txt-explicativo">Digite um texto que você deseja criptografar ou descriptografar</p>
+            </div>
+        
         </div>
+
+        </main>
+
+        <footer>
+        </footer>
     </body>
 </html>
