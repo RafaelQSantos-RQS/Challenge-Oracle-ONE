@@ -89,10 +89,6 @@ input::placeholder {
     border-radius: 32px;
 }
 
-#retanguloInicio span {
-    padding: 579px 32px auto 32px;
-}
-
 /* Imagem dentro do retângulo a direita*/
 #imagemInicio {
     position: absolute;
@@ -100,6 +96,13 @@ input::placeholder {
     height: 304px;
     padding: 243px 32px 397px 32px;
 }
+
+.botoes {
+    width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Botão de Criptografar*/
 .btn_criptografar {
     cursor: pointer;
@@ -127,37 +130,29 @@ input::placeholder {
     left: 240px;
     right: 872px;
 
-    transition: all 0.5s ease;
-}
-
-/* Aumenta o botão quando passa o mouse em cima*/
-.btn_criptografar:hover {
-    transform: scale(1.1);
-}
-
-/* Texto do centro do botão (Criptografar)*/
-.btn_criptografar span {
-    cursor: pointer;
-    width: 280px;
-    height: 19px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
-    vertical-align: middle;
-
-    /* White */
     color: #FFFFFF;
 
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 1;
+    transition: all 0.5s ease;
 }
 
+/* Animações do Botão criptografar*/
+.btn_criptografar:hover {
+    scale: 1.1;
+}
+
+.btn_criptografar:active {
+    scale: 0.9;
+}
+
+/* Botão descriptografar*/
 .btn_descriptografar {
     cursor: pointer;
     box-sizing: border-box;
@@ -179,6 +174,16 @@ input::placeholder {
     order: 1;
     flex-grow: 0;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #0A3871;
+
     position: absolute;
     top: 885px;
     bottom: 72px;
@@ -188,24 +193,11 @@ input::placeholder {
     transition: all 0.5s ease;
 }
 
+/* Animação do botão descriptografar*/
 .btn_descriptografar:hover {
-    transform: scale(1.1);
+    scale: 1.1;
 }
 
-.btn_descriptografar span {
-    width: 280px;
-    height: 19px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    /* Dark blue/dark-blue-300 */
-    color: #0A3871;
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 1;
+.btn_descriptografar:active {
+    scale: 0.9;
 }
