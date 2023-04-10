@@ -26,22 +26,36 @@ public class Conversao {
 	private String setOpcao() {
 		// Criando a janela de opções
 		switch (this.tipo) {
-		case "Conversor de Moeda":
-			String[] opcoes_moeda = { "Converter de Reais a Dólar", "Converter de Reais a Euro",
-					"Converter de Reais a Libras Esterlinas", "Converter de Reais a Peso argentino",
-					"Converter de Reais a Peso Chileno", "Converter de Dólar a Reais", "Converter de Euro a Reais",
-					"Converter de Libras Esterlinas a Reais", "Converter de Peso argentino a  Reais",
-					"Converter de Peso Chileno a Reais" };
-			String aux_moeda = (String) JOptionPane.showInputDialog(null, "Escolha um item", "Seleção de itens",
-					JOptionPane.PLAIN_MESSAGE, null, opcoes_moeda, "");
-			testeNull(aux_moeda);
-			return aux_moeda;
-		case "Conversor de Temperatura":
-			String[] opcoesTemperatura = {"Celcius para Fahrenheit","Celsius para Kelvin","Fahrenheit para Celsius","Kelvin para Celsius","Fahrenheit para Kelvin","Kelvin para Fahrenheit"};
-			String aux_temp = (String) JOptionPane.showInputDialog(null, "Escolha um item", "Seleção de itens",
-					JOptionPane.PLAIN_MESSAGE, null, opcoesTemperatura, "");
-			testeNull(aux_temp);
-			return aux_temp;
+			case "Conversor de Moeda":
+				String[] opcoes_moeda = { 
+					"Converter de Reais a Dólar", 
+					"Converter de Reais a Euro",
+					"Converter de Reais a Libras Esterlinas", 
+					"Converter de Reais a Peso argentino",
+					"Converter de Reais a Peso Chileno", 
+					"Converter de Dólar a Reais", 
+					"Converter de Euro a Reais",
+					"Converter de Libras Esterlinas a Reais", 
+					"Converter de Peso argentino a  Reais",
+					"Converter de Peso Chileno a Reais" 
+				};
+				String aux_moeda = (String) JOptionPane.showInputDialog(null, "Escolha um item", "Seleção de itens",
+						JOptionPane.PLAIN_MESSAGE, null, opcoes_moeda, "");
+				testeNull(aux_moeda);
+				return aux_moeda;
+			case "Conversor de Temperatura":
+				String[] opcoesTemperatura = {
+					"Celsius para Fahrenheit",
+					"Celsius para Kelvin",
+					"Fahrenheit para Celsius",
+					"Kelvin para Celsius",
+					"Fahrenheit para Kelvin",
+					"Kelvin para Fahrenheit"
+				};
+				String aux_temp = (String) JOptionPane.showInputDialog(null, "Escolha um item", "Seleção de itens",
+						JOptionPane.PLAIN_MESSAGE, null, opcoesTemperatura, "");
+				testeNull(aux_temp);
+				return aux_temp;
 		}
 		return "";
 	}
@@ -62,29 +76,32 @@ public class Conversao {
 
 	public void resultado() {
 		switch (this.tipo) {
-		case "Conversor de Moeda":
-			Moedas moeda = new Moedas();
-			moeda.setValor(this.valor);
-			moeda.getValor(this.opcao);
-			break;
-		case "Conversor de Temperatura":
-			Temperatura temp = new Temperatura();
-			temp.setValor(this.valor);
-			temp.getValor(this.opcao);
-			break;
+			case "Conversor de Moeda":
+				Moedas moeda = new Moedas();
+				moeda.setValor(this.valor);
+				moeda.getValor(this.opcao);
+				break;
+			case "Conversor de Temperatura":
+				Temperatura temp = new Temperatura();
+				temp.setValor(this.valor);
+				temp.getValor(this.opcao);
+				break;
 		}
 	}
 
-	private boolean campoNumerico(String campo) {
-		return campo.matches("[0-9]+");
+	private boolean campoNumerico(String valor) {
+		try {
+			Float.parseFloat(valor);
+			return true;
+		} catch (NumberFormatException e) {
+			return false;
+		}
 	}
-
-	private void testeNull(String teste) {
-		if (teste == null) {
-			JOptionPane.showMessageDialog(null, "Você está saindo do programa...");
+	
+	private void testeNull(String texto) {
+		if (texto == null) {
+			JOptionPane.showMessageDialog(null, "Programa finalizado", "Message", JOptionPane.INFORMATION_MESSAGE);
 			System.exit(0);
 		}
-
 	}
-
-}
+}	
